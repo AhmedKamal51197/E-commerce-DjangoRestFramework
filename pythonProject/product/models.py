@@ -17,3 +17,14 @@ class Product(models.Model):
     stock = models.IntegerField(default=0)
     createdAt =  models.DateTimeField(auto_now_add=True)
     user = models.ForeignKey(User,null=True,on_delete=models.SET_NULL)
+
+
+class Reviews(models.Model):
+    product = models.ForeignKey(Product,null=True,on_delete=models.CASCADE,related_name='reviews')
+    user = models.ForeignKey(User,null=True,on_delete=models.SET_NULL)
+    rating = models.IntegerField(default=0)
+    createdAt = models.DateTimeField(auto_now_add=True)
+    comment = models.TextField(max_length=200, default="", blank=False)
+
+    def __str__(self):
+        return self.comment

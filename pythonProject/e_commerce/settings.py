@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-lbio381t-v2lcgcm!_huzre!1vni=m*h6ls(pn0he29b-$t^a)'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1']
 
@@ -55,6 +55,20 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'e_commerce.urls'
+
+
+# EMAIL_BACKEND='django.core.mail.backends.stmp.EmailBackend'
+EMAIL_BACKEND='django.core.mail.backends.console.EmailBackend'
+EMAIL_HOST = 'sandbox.smtp.mailtrap.io'
+EMAIL_HOST_USER = '135bd3665c7273'
+EMAIL_HOST_PASSWORD = 'ad1c440b025a7e'
+EMAIL_PORT = '2525'
+EMAIL_USE_TLS=False
+EMAIL_USE_SSL=False
+
+
+
+
 
 TEMPLATES = [
     {
